@@ -8,7 +8,14 @@ public class Person
         LastName = lastName;
         _heroName = GetHeroName(firstName, lastName);
     }
-    public string FirstName { get; set; }
+
+    private string _firstName;
+    public string FirstName
+    {
+        get { return _firstName;}
+        set { _firstName = value;}
+    }
+    
     
     public string LastName { get; set; }
 
