@@ -1,6 +1,5 @@
-#load "../shared/heroGenerator.csx"
 #load "../shared/environment.csx"
-
+#load "../shared/person.csx"
 using System.Net;
 
 public static HttpResponseMessage Run(HttpRequestMessage req, TraceWriter log)
@@ -16,6 +15,6 @@ public static HttpResponseMessage Run(HttpRequestMessage req, TraceWriter log)
 
     return first == null || last == null 
         ? req.CreateResponse(HttpStatusCode.BadRequest, "First and/or Last name argument is missing.")
-        : req.CreateResponse(HttpStatusCode.OK, GetHeroName(first, last));
+        : req.CreateResponse(HttpStatusCode.OK, new Person(first, last));
     
 }
