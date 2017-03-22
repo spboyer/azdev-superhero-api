@@ -15,6 +15,8 @@ public static HttpResponseMessage Run(HttpRequestMessage req, TraceWriter log)
 
     return first == null || last == null 
         ? req.CreateResponse(HttpStatusCode.BadRequest, "First and/or Last name argument is missing.")
-        : req.CreateResponse(HttpStatusCode.OK, new Person(first, last));
+        : Person p = new Person(first, last); 
+        
+    return req.CreateResponse(HttpStatusCode.OK, p);
     
 }
