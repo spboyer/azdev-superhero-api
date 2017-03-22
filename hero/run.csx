@@ -4,9 +4,8 @@
 
 using System.Net;
 
-public static Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceWriter log)
+public static HttpResponseMessage Run(HttpRequestMessage req, TraceWriter log)
 {
-
 
     string first = req.GetQueryNameValuePairs()
         .FirstOrDefault(q => string.Compare(q.Key, "first", true) == 0)
