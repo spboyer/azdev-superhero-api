@@ -4,6 +4,8 @@ public class Person
 {
     public Person(string firstName, string lastName)
     {
+        FirstName = firstName;
+        LastName = lastName;
         _heroName = GetHeroName(firstName, lastName);
     }
     public string FirstName { get; set; }
