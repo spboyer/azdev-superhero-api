@@ -1,4 +1,4 @@
-#include "heroGenerator.csx"
+#load "heroGenerator.csx"
 
 public class Person
 {
@@ -23,5 +23,4 @@ public class Person
     /// Method used to call HeroGenerator to set the Superhero Name using the First and Last Name
     /// </summary>
     public void SetHeroName(){ _heroName = GetHeroName(FirstName, LastName);}
-
 }
