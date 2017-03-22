@@ -3,13 +3,11 @@ public class Person
     /// <summary>
     /// First Name of the Person object
     /// </summary>
-    [Required]
     public string FirstName { get; set; }
 
     /// <summary>
     /// Last Name of the Person object
     /// </summary>
-    [Required]
     public string LastName { get; set; }
     
     private string _heroName;
