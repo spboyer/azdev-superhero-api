@@ -1,0 +1,96 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "SuperHero API",
+        "description": "SuperHere Name Generator",
+        "version": "1.0.0"
+    },
+    "host": "superhero-api.azurewebsites.net",
+    "schemes": [
+        "https"
+    ],
+    "basePath": "/api",
+    "produces": [
+        "application/json"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "paths": {
+        "/v1/hero": {
+            "get": {
+                "summary": "Get Hero Name",
+                "description": "Generates a Super Hero name for a person's First and Last Name.\n",
+                "parameters": [
+                    {
+                        "name": "first",
+                        "in": "query",
+                        "description": "First Name",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    },
+                    {
+                        "name": "last",
+                        "in": "query",
+                        "description": "Last Name.",
+                        "required": true,
+                        "type": "string",
+                        "format": "string"
+                    }
+                ],
+                "tags": [
+                    "Hero"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A person and hero name",
+                        "schema": {
+                            "$ref": "#/definitions/Person"
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Person": {
+            "type": "object",
+            "properties": {
+                "FirstName": {
+                    "type": "string",
+                    "description": "First name of the person."
+                },
+                "LastName": {
+                    "type": "string",
+                    "description": "Last name of the person."
+                },
+                "HeroName": {
+                    "type": "string",
+                    "description": "SuperHero name of the person."
+                }
+            }
+        },
+        "Error": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "fields": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
