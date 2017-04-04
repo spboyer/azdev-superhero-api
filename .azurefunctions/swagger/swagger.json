@@ -2,7 +2,7 @@
     "swagger": "2.0",
     "info": {
         "title": "SuperHero API",
-        "description": "SuperHere Name Generator",
+        "description": "SuperHere Name Generator API",
         "version": "1.0.0"
     },
     "host": "superhero-api.azurewebsites.net",
