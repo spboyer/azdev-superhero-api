@@ -17,7 +17,7 @@
         "application/json"
     ],
     "paths": {
-        "/v1/hero": {
+        "/hero": {
             "get": {
                 "summary": "Get Hero Name",
                 "description": "Generates a Super Hero name for a person's First and Last Name.\n",
