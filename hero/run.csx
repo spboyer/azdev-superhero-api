@@ -1,6 +1,6 @@
 #load "../shared/environment.csx"
-#load "../person.csx"
-#load "../heroGenerator.csx"
+#load "../shared/person.csx"
+#load "../shared/heroGenerator.csx"
 
 using System.Net;
 
