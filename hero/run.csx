@@ -1,7 +1,7 @@
 #r "Newtonsoft.Json"
 #load "../shared/environment.csx"
-#load "../shared/person.csx"
-#load "../shared/heroGenerator.csx"
+#load "person.csx"
+#load "heroGenerator.csx"
 
 using System.Net;
 using Newtonsoft.Json;
