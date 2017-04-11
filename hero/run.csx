@@ -1,10 +1,9 @@
-#r "Newtonsoft.Json"
 #load "../shared/environment.csx"
-#load "person.csx"
-#load "heroGenerator.csx"
+#load "../person.csx"
+#load "../heroGenerator.csx"
 
 using System.Net;
-using Newtonsoft.Json;
+
 public static HttpResponseMessage Run(HttpRequestMessage req, TraceWriter log)
 {
 
