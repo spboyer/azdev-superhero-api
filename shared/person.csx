@@ -1,4 +1,5 @@
 #r "Newtonsoft.Json"
+
 #load "heroGenerator.csx"
 
 using Newtonsoft.Json;
