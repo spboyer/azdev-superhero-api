@@ -1,4 +1,4 @@
-#r "/Newtonsoft.Json"
+#r "Newtonsoft.Json"
 
 #load "heroGenerator.csx"
 
