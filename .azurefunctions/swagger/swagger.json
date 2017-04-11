@@ -25,7 +25,7 @@
                     {
                         "name": "first",
                         "in": "query",
-                        "description": "First Name",
+                        "description": "First Name.",
                         "required": true,
                         "type": "string",
                         "format": "string"
@@ -63,15 +63,15 @@
         "Person": {
             "type": "object",
             "properties": {
-                "FirstName": {
+                "firstName": {
                     "type": "string",
                     "description": "First name of the person."
                 },
-                "LastName": {
+                "lastName": {
                     "type": "string",
                     "description": "Last name of the person."
                 },
-                "HeroName": {
+                "heroName": {
                     "type": "string",
                     "description": "SuperHero name of the person."
                 }

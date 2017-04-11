@@ -1,6 +1,9 @@
+#r "Newtonsoft.Json"
+
 #load "../shared/environment.csx"
 #load "../shared/person.csx"
 using System.Net;
+using Newtonsoft.Json;
 
 public static HttpResponseMessage Run(HttpRequestMessage req, TraceWriter log)
 {
@@ -21,6 +24,6 @@ public static HttpResponseMessage Run(HttpRequestMessage req, TraceWriter log)
 
         Person p = new Person(first, last);
 
-        return req.CreateResponse(HttpStatusCode.OK, p);
+        return req.CreateResponse(HttpStatusCode.OK, JsonConvert.SerializeObject(p));
     }
 }
