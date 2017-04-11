@@ -1,6 +1,8 @@
 #r "Newtonsoft.Json"
 #load "../shared/environment.csx"
-#load "../shared/person.csx"
+// #load "../shared/person.csx"
+#load "../shared/heroGenerator.csx"
+
 using System.Net;
 using Newtonsoft.Json;
 public static HttpResponseMessage Run(HttpRequestMessage req, TraceWriter log)
@@ -24,4 +26,26 @@ public static HttpResponseMessage Run(HttpRequestMessage req, TraceWriter log)
 
         return req.CreateResponse(HttpStatusCode.OK, p, "application/json");
     }
+}
+
+
+public class Person
+{
+    public Person(string firstName, string lastName)
+    {
+        FirstName = firstName;
+        LastName = lastName;
+        _heroName = GetHeroName(firstName, lastName);
+    }
+
+    [JsonProperty(PropertyName = "firstName" )]
+    public string FirstName { get; set; }
+
+    [JsonProperty(PropertyName = "lastName" )]
+    public string LastName { get; set; }
+
+    private string _heroName;
+
+    [JsonProperty(PropertyName= "heroName" )]
+    public string HeroName { get { return _heroName;} }
 }
