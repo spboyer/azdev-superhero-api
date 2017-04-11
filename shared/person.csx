@@ -13,14 +13,14 @@ public class Person
         _heroName = GetHeroName(firstName, lastName);
     }
 
-    [JsonProperty("firstName")]
+    [JsonProperty(PropertyName = "firstName" )]
     public string FirstName { get; set; }
 
-    [JsonProperty("lastName")]
+    [JsonProperty(PropertyName = "lastName" )]
     public string LastName { get; set; }
 
     private string _heroName;
 
-    [JsonProperty("heroName")]
+    [JsonProperty(PropertyName= "heroName" )]
     public string HeroName { get { return _heroName;} }
 }

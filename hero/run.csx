@@ -1,7 +1,8 @@
+#r "Newtonsoft.Json"
 #load "../shared/environment.csx"
 #load "../shared/person.csx"
 using System.Net;
-
+using Newtonsoft.Json;
 public static HttpResponseMessage Run(HttpRequestMessage req, TraceWriter log)
 {
 
