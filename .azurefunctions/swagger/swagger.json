@@ -57,6 +57,33 @@
                     }
                 }
             }
+        },
+        "/legion": {
+            "get":{
+                "summary": "Get a Legion of Heroes",
+                "description": "Generates a collection of SuperHeroes.\n",
+                "parameters":[
+                    {
+                        "name": "person",
+                        "in": "body",
+                        "description": "Person object",
+                        "required": true,
+                        "type": "object",
+                        "format": "string"
+                    }
+                ],
+                "tags":[
+                    "Hero"
+                ],
+                "responses":{
+                    "200": {
+                        "description": "A person and hero name",
+                        "schema": {
+                            "$ref": "#/definitions/Person"
+                        }
+                }
+            }
+
         }
     },
     "definitions": {
