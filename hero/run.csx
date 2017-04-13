@@ -4,9 +4,9 @@
 
 using System.Net;
 
-public static HttpResponseMessage Run(HttpRequestMessage req, Person person, TraceWriter log)
+
+public static HttpResponseMessage Run(HttpRequestMessage req, TraceWriter log)
 {
-    return req.CreateResponse(HttpStatusCode.OK, person , "application/json");
 
     string first = req.GetQueryNameValuePairs()
         .FirstOrDefault(q => string.Compare(q.Key, "first", true) == 0)
