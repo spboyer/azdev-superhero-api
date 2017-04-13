@@ -1,0 +1,9 @@
+{
+  "frameworks": {
+    "net46":{
+      "dependencies": {
+        "GenFu": "1.2.1"
+      }
+    }
+   }
+}

@@ -3,6 +3,7 @@
 #load "../shared/heroGenerator.csx"
 
 using System.Net;
+using GenFu;
 
 public static HttpResponseMessage Run(HttpRequestMessage req, TraceWriter log)
 {
