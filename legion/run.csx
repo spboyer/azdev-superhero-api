@@ -13,7 +13,7 @@ public static HttpResponseMessage Run(Person req, TraceWriter log)
         return new HttpResponseMessage(HttpStatusCode.BadRequest, "First and/or Last name argument is missing.");
     } else {
 
-        Person p = new Person(req.first, req.last);
+        Person p = new Person(req.First, req.Last);
 
         return new HttpResponseMessage(HttpStatusCode.OK, p, "application/json");
     }
