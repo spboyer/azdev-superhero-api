@@ -5,17 +5,17 @@
 using System.Net;
 
 
-public static HttpResponseMessage Run(Person req, TraceWriter log)
+public static HttpResponseMessage Run(HttpRequestMessage req, Person person, TraceWriter log)
 {
 
-    if (req.first == null || req.last == null)
+    if (person.First == null || person.Last == null)
     {
-        return new HttpResponseMessage(HttpStatusCode.BadRequest, "First and/or Last name argument is missing.");
+        return req.CreateResponse(HttpStatusCode.BadRequest, "First and/or Last name argument is missing.");
     } else {
 
-        Person p = new Person(req.First, req.Last);
+        Person p = new Person(person.First, person.Last);
 
-        return new HttpResponseMessage(HttpStatusCode.OK, p, "application/json");
+        return req.CreateResponse(HttpStatusCode.OK, p, "application/json");
     }
 }
 
