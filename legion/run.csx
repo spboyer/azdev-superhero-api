@@ -8,12 +8,12 @@ using System.Net;
 public static HttpResponseMessage Run(HttpRequestMessage req, Person person, TraceWriter log)
 {
 
-    if (person == null)
+    if (String.IsNullOrEmpty(person.FirstName) || String.IsNullOrEmpty(person.LastName))
     {
         return req.CreateResponse(HttpStatusCode.BadRequest, "First and/or Last name argument is missing.");
     } else {
 
-        Person p = new Person(person.First, person.Last);
+        Person p = new Person(person.FirstName, person.LastName);
 
         return req.CreateResponse(HttpStatusCode.OK, p, "application/json");
     }
