@@ -8,7 +8,7 @@ using System.Net;
 public static HttpResponseMessage Run(HttpRequestMessage req, Person person, TraceWriter log)
 {
 
-    if (person.First == null || person.Last == null)
+    if (String.IsNullOrEmpty(person.First) || String.IsNullOrEmpty(person.Last))
     {
         return req.CreateResponse(HttpStatusCode.BadRequest, "First and/or Last name argument is missing.");
     } else {
